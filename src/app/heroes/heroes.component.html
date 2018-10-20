@@ -1,4 +1,12 @@
-<p>
+<h2>My Heroes</h2>
+
+<ul>
+  <li *ngFor="let hero of heroes">
+    <span>{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+<!--<p>
   heroes works! {{hero.id}}, {{hero.name}}
 </p>
 
@@ -22,4 +30,4 @@
   <label>name:
     <input [(ngModel)]="hero.name" placeholder="name">
   </label>
-</div>
+</div>-->
