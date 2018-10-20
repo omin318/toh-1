@@ -1,7 +1,8 @@
 <h2>My Heroes</h2>
 
 <ul>
-  <li class="d-flex m-1" *ngFor="let hero of heroes" (click)="onSelected(hero)">
+  <li class="d-flex m-1" *ngFor="let hero of heroes" (click)="onSelected(hero)"
+    [class.selected]="hero === selectedHero">
     <span class="bg-primary text-light p-2 rounded-left">{{hero.id}}</span>
     <div class="bg-light text-dark w-50 p-2 rounded-right">{{hero.name}}</div>
   </li>
