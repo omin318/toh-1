@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Hero} from '../hero';
 import {HEROES} from '../mock-heroes';
+import {HeroService} from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -14,7 +15,7 @@ export class HeroesComponent implements OnInit {
   //   name: 'Winstorm'
   // };
   hero: Hero;
-  heroes = HEROES;
+  heroes: Hero[];
   isSpecial = true;
   selectedHero: Hero;
 
@@ -24,6 +25,10 @@ export class HeroesComponent implements OnInit {
     this.hero = new Hero();
     this.hero.id = 11;
     this.hero.name = 'Winstorm';
+
+    // 의존성이 있는 코드 heroes 클래스가 heroService 클래스에 의존
+    const heroService = new HeroService();
+    this.heroes = heroService.getHeroes();
   }
 
   ngOnInit() {
